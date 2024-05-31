@@ -1,0 +1,1 @@
+Execução do circuito em placa perfurada para conter o cpu, os pull ups nos sinais requeridos, pinos de acesso a todos os sinais do processador e 4 conjuntos especificos de pinos para ligar: a alimentação (5V), circuito de clock, circuito de halt & reset. circuito dtack.  
