@@ -1,0 +1,29 @@
+# Expansion BUS 68010 - Available choices 
+
+# rosco-m68k
+rosco_m68k JP3 (Expansion) Pinout (revision 2)
+64   = 32 x 2
+https://github.com/rosco-m68k/rosco_m68k/blob/release/version-2.42/design/r2/jp3_pinout.md  
+
+# Motorola 68000 computer
+https://hackaday.io/project/7242-motorola-68000-computer/
+62 = 32 x 2  DIN41612 64 way a+b
+https://hackaday.io/project/7242-motorola-68000-computer/log/30087-expansion-interface  
+
+# computie / transistorfet
+https://github.com/transistorfet/computie
+80 = 40 x 2 
+https://github.com/transistorfet/computie/blob/main/hardware/68k-SBC/revisions/68kBoard-rev2.pdf
+
+# m68kcomputer / jtsiomb
+https://github.com/jtsiomb/m68kcomputer
+62 = 18 x 2 + 13 x 2
+https://github.com/jtsiomb/m68kcomputer/blob/master/hw/schem/m68kcomp1-main_rev1.pdf
+
+# 68000 / jefftranter (based on Alan Clements book)
+https://github.com/jefftranter/68000/tree/master/TS2/v2.1
+No bus, but interesant
+
+# VMEbus
+192 = 64 x 3
+https://en.wikipedia.org/wiki/VMEbus
