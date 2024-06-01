@@ -15,6 +15,10 @@ Testado em breadboard, foto sinal no dso
 
 # c) basic 4pin crystal clock  
 Testado em breadboard, foto sinal no dso
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic_4pin_crystal_clock1.jpeg?raw=true)
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic_4pin_crystal-clock1-bb1.jpeg?raw=true)
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic_4pin_crystal-clock1-bb1-signal1.jpeg?raw=true)
+Este circuito só foi testado depois de ter efectuado o primeiro teste ao circuito freerun
 
 O escolhido para ser usado no circuito de teste freerun1 foi o basic rc2014 clock  
 
