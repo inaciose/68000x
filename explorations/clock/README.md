@@ -1,5 +1,11 @@
 # 68000 clock circuits
-Numa primeira fase foram experimentados os seguintes circuitos:  
+Os circuitos de clock foram experimentados em várias fases.  
+Na primeira fase (escolha para circuito teste freerun1):  
+- a) basic 4pin crystal clock
+- b) basic rc2014 clock
+- 
+Segunda fase (avaliação de alternativas)
+- c) basic 4pin crystal clock
 
 # a) roscom68k hackday clock  
 Testado em breadboard, foto sinal no dso
@@ -20,8 +26,9 @@ Testado em breadboard, foto sinal no dso
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic_4pin_crystal-clock1-bb1-signal1.jpeg?raw=true)
 Este circuito só foi testado depois de ter efectuado o primeiro teste ao circuito freerun
 
+# escolhido para o circuito de teste freerun1
 O escolhido para ser usado no circuito de teste freerun1 foi o basic rc2014 clock  
 
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic-rc2014-clock1.jpg?raw=true)
 
-Em breve vou experimentar usar um relógio de 4 pinos. Espero uma melhor qualidade no sinal.
+
