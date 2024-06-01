@@ -1,7 +1,8 @@
+# 
 Execução do circuito em placa perfurada para o CPU e ligações aos seus sinais.
-A placa contem o cpu, os pull ups nos sinais requeridos, pinos de acesso a todos os sinais do processador (bus expansão)
- 4 conjuntos especificos de pinos para ligar: 
-- a alimentação (5V), 
-- circuito de clock, 
-- circuito de halt & reset. 
-- circuito dtack.  
+Testes e escolha de um circuito de clock
+testes e escolha de circuito de halt & reset (no caso do 68000 tem especificidades)
+Execução do circuito free run
+Teste aos 3 cpus. 2 x MC68010P12 + 1 x MC68HC000P10.  
+Todos passaram o teste rápido. O cicuito de teste com MC68010P12 consome 0.20A, e com o MC68HC000P10 consome menos de 0.01A.  
+
