@@ -3,7 +3,7 @@ Os circuitos de clock foram experimentados em várias fases.
 Na primeira fase (escolha para circuito teste freerun1):  
 - a) basic 4pin crystal clock
 - b) basic rc2014 clock
-- 
+
 Segunda fase (avaliação de alternativas)
 - c) basic 4pin crystal clock
 - d) rosco m68kcomputer clock (variation of 4pin crystal clock)
@@ -34,8 +34,8 @@ Testado em breadboard, foto sinal no dso
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/rosco-m68kcomputer-clock1-bb1.jpeg?raw=true)
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/rosco-m68kcomputer-clock1-bb1-signal1.jpeg?raw=true)
 
-# escolhido para o circuito de teste freerun1
-O escolhido para ser usado no circuito de teste freerun1 foi o basic rc2014 clock  
+# Escolha do circuito de clock a ser usado no circuito de teste freerun1
+O escolhido para ser usado no circuito de teste freerun1 foi o "basic rc2014 clock"
 
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic-rc2014-clock1.jpg?raw=true)
 
