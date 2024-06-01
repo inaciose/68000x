@@ -25,22 +25,25 @@ obriga a clicar sempre no reset depois de ligar. Pois numa fase inicial não man
 Pelo que li para um arranque on power on eles tem de ser mantidos low por um perido de tempo.
 
 # c) myreset1
+No seguimento do estudo de uma solução melhor, fui experimentando várias configurações até chegar a esta, que aparentemente seria funcional.
+Mas tem uma oscliação estranha quando se clica no reset, ver fotos abaixo.
+Falta desenhar o circuito.
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/reset/myreset1-bb1.jpeg?raw=true)
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/reset/myreset1-bb1-signal1.jpeg?raw=true)
 
 # d) reset only
 https://myprojects77.wordpress.com/2017/09/07/first-blog-post/
 
 # e) Rosco reset
-rosco-m68kcomputer-reset1.jpg
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/reset/rosco-m68kcomputer-reset1.jpg?raw=true)
+
 
 # Escolha do circuito de halt & reset a ser usado no circuito de teste freerun1
 Foram experimentados os circuitos a) e b). 
 O circuito b) jtsiomb-m68kcomputer-reset1.jpg, foi o escolhido para ser usado no teste freerun1
 
-# Notas sobre o circuito c) myreset1
-No seguimento do estudo de uma solução melhor, fui experimentando várias configurações até chegar a esta, que aparentemente seria funcional.
-Mas tem uma oscliação estranha quando se clica no reset, ver fotos abaixo.
-Falta desenhar o circuito.
-
-
+# Notas sobre a avaliação de alternativas
+Estudo de alternativas para uma solução melhor, (halt e reset low nos 500ms iniciais)
+- o circuito c) myreset1 - tem uma oscliação estranha quando se clica no reset, (ainda não experimentado no freerunner)
 
 
