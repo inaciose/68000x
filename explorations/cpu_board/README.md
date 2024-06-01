@@ -7,3 +7,8 @@ e 4 conjuntos especificos de pinos para ligar:
 - circuito dtack.
 
 A placa está funcional e já foi testada num circuito freerun, mas precisa de ser melhorada
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic-rc2014-clock1.jpg?raw=true)
+
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/cpu_board/68kcpu_board_top_view_with_zif1.jpeg?raw=true)
+
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/cpu_board/68kcpu_board_basic_connectors1.jpeg?raw=true)
