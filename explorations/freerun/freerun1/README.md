@@ -5,10 +5,10 @@ Neste circuito, os cpu e os pullups, estão na cpu_bord v1.0, e os leds estão n
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/freerun/freerun1/freerun_circuit1.jpg?raw=true)
 
 # clock circuit
-![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic-rc2014-clock1.jpg?raw=true)
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/clock/basic-2pin-crystal/basic-rc2014-clock1.jpg?raw=true)
 
 # halt & reset circuit
-![alt text](https://github.com/inaciose/68000x/blob/main/explorations/reset/jtsiomb-m68kcomputer-reset1.jpg?raw=true)
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/reset/jtsiomb-m68kcomputer/jtsiomb-m68kcomputer-reset1.jpg?raw=true)
 
 # dtack
 dtack grounded
