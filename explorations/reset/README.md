@@ -52,10 +52,10 @@ Foram experimentados os circuitos a) e b).
 O circuito b) jtsiomb-m68kcomputer-reset1, foi o escolhido para ser usado no teste freerun1  
 
 # Novo circuito de reset a ser usado no circuito de teste freerun2
-Após algumas experiências cheguei uma solução melhor.  
+Após algumas experiências cheguei a uma solução melhor.  
 Com apenas 2 ICs produz um sinal de halt e reset low nos 500ms iniciais, ou pressionando o botão de reset.  
 No teste do freerun2 com este circuito o cpu arrancou normalmente sem necessidade de pressionar o reset.  
-
+Portanto, por enquanto, circuito c) 68kmyreset.
 
 
 
