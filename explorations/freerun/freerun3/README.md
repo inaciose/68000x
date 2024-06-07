@@ -1,7 +1,7 @@
 # Circuito de teste free run para o motorola 68000, v 3.0
 Relativamente á antiga versão foi acrescentado o circuito de dtack single step, e os três circuitos foram consolidados numa placa perfurada que denominei de basic_control_board.
 
-![alt text](https://github.com/inaciose/68000x/blob/main/explorations/freerun/freerun3/freerun3_full-view1.jpeg?raw=true) 
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/freerun/freerun3/freerun3-full-view1.jpeg?raw=true) 
 
 Composto por cpu, com os pull ups nos sinais requeridos, e circuitos de clock (em bb), halt & reset (em bb), dtack single step ou grounded (jumper select), e leds (em modo contador se estiver funcional).  
   
@@ -30,5 +30,5 @@ Sem interruptor, ou seja só os jacarés a ligar (imagem abaixo), a fonte de ali
 - breadboard leds: 4.85V
 
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/freerun/freerun3/interruptor_quebra_tensao.jpeg?raw=true)  
-![alt text](https://github.com/inaciose/68000x/blob/main/explorations/freerun/freerun3/jacaredirecto_ok.jpeg?raw=true)  
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/freerun/freerun3/jacare_directo_ok.jpeg?raw=true)  
 
