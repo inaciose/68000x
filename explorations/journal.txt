@@ -1,8 +1,14 @@
-# 
-Execução do circuito em placa perfurada para o CPU e ligações aos seus sinais.
-Testes e escolha de um circuito de clock
-testes e escolha de circuito de halt & reset (no caso do 68000 tem especificidades)
-Execução do circuito free run
-Teste aos 3 cpus. 2 x MC68010P12 + 1 x MC68HC000P10.  
-Todos passaram o teste rápido. O cicuito de teste com MC68010P12 consome 0.20A, e com o MC68HC000P10 consome menos de 0.01A.  
+# 2024 - Maio 
+- Execução do circuito em placa perfurada para o CPU e ligações aos seus sinais (cpu_board).
+- Testes e escolha de um circuito de clock
+- testes e escolha de circuito de halt & reset (o reset no caso do 68000 tem especificidades)
+- Execução do circuito freerun1 com a cpu_board, e os circuitos de clock e reset em bb 
+- - Teste aos 3 cpus. 2 x MC68010P12 + 1 x MC68HC000P10.  
+- - - Todos passaram o teste rápido. O cicuito de teste com MC68010P12 consome 0.20A, e com o MC68HC000P10 consome menos de 0.01A.  
+- freerun2, circuito de reset com funcionalidade de reset on power on
+- teste ao circuito de dtack single step
+
+# 2024 - Junho 
+- Construção da placa de control basico do cpu (basic_control_board) com os circuitos clock, reset & e dtackss or grounded)
+- notas sobre a alimentação, ser negativamente afectada pelo interruptor pois produz uma quebra de tensão.
 
