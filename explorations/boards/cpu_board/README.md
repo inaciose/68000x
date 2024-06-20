@@ -17,6 +17,8 @@ Execução do circuito em placa perfurada para o CPU e ligações aos seus sinai
   
 
 # bus expansão horizontal
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/boards/cpu_board/68kcpu_board_full_expansion_bus_con1.jpeg?raw=true)  
+  
   
 # ligações auxiliares
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/boards/cpu_board/68kcpu_board_basic_connectors1.jpeg?raw=true)  
@@ -25,8 +27,14 @@ Execução do circuito em placa perfurada para o CPU e ligações aos seus sinai
 # notas da fase 2
 Outras imagens da placa já com o bus de expensão horizontal
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/boards/cpu_board/68kcpu_board_full_top_view1.jpeg?raw=true)  
+  
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/boards/cpu_board/68kcpu_board_full_bottom_view1.jpeg?raw=true)  
 
+  
+Teste freerun  
+![alt text](https://github.com/inaciose/68000x/blob/main/explorations/boards/cpu_board/68kcpu_board_full_top_view_with_expansion_freerun1.jpeg?raw=true)  
+  
+  
 Exemplo da placa de expansão prevista  
 ![alt text](https://github.com/inaciose/68000x/blob/main/explorations/boards/cpu_board/68kcpu_board_full_top_view_with_expansion1.jpeg?raw=true)  
 
