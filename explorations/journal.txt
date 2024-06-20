@@ -1,5 +1,5 @@
 # 2024 - Maio 
-- Execução do circuito em placa perfurada para o CPU e ligações aos seus sinais (cpu_board).
+- Execução do circuito em placa perfurada para o CPU e ligações aos seus sinais (cpu_board). 
 - Testes e escolha de um circuito de clock
 - testes e escolha de circuito de halt & reset (o reset no caso do 68000 tem especificidades)
 - Execução do circuito freerun1 com a cpu_board, e os circuitos de clock e reset em bb 
@@ -11,4 +11,5 @@
 # 2024 - Junho 
 - Construção da placa de control basico do cpu (basic_control_board) com os circuitos clock, reset & e dtackss or grounded)
 - notas sobre a alimentação, ser negativamente afectada pelo interruptor pois produz uma quebra de tensão.
-
+- Conclusão da placa com (cpu_board) as conexões de expansão horizontais v1.0 e teste freerun  
+- Avaliação des circuitos de memória ROM, RAM e descodificadores modulares
