@@ -13,3 +13,5 @@
 - notas sobre a alimentação, ser negativamente afectada pelo interruptor pois produz uma quebra de tensão.
 - Conclusão da placa com (cpu_board) as conexões de expansão horizontais v1.0 e teste freerun  
 - Avaliação des circuitos de memória ROM, RAM e descodificadores modulares
+- ROM only circuit1, teste1 falhado: https://github.com/inaciose/68000x/tree/6f156dd65d29b6ec7fafb11f50479ea865d0484a/explorations/memory/rom_circuit1
+- Execução da placa de expansão com ROM: https://github.com/inaciose/68000x/tree/6f156dd65d29b6ec7fafb11f50479ea865d0484a/explorations/boards/bus_rom_board
