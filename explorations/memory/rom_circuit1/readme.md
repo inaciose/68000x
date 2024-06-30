@@ -27,7 +27,7 @@ end + 2 = 0C
 end + 3 = 0D  
   
 end + 0 = 0A 0B  
-end + 2 = 0C 0D  
+end + 2 = 0C 0D 
 
 # Teste 1  
 
@@ -43,4 +43,44 @@ Foram gravadas duas ROMs com:
 
 Não correu muito bem, pois não fez o loop que esperava.  
 
+# Teste 2
+Usando a placa bus_rom_board.  
+  
+ROMLOWCE = Y0 + LDS  
+ROMUPCE = Y0 + UDS  
+  
+ROMOE AS + not(RW)  
 
+easybin: save as 2 files: 0, 1
+
+bin 0 go to high data bits
+bin 1 go to low data bits
+
+code 
+00000000                             7      ORG     $0000
+00000000= 00AAFF00                   8      DC.L    $00aaff00
+00000004= 00000040                   9      DC.L    start       
+00000040                            10      ORG     $0040
+00000040                            11  START: 
+00000040  303C AAAA                 12      move.w  #$aaaa, d0
+00000044  33C0 00100000             14      move.w  d0, $100000
+0000004A  4640                      15      not.w   d0
+0000004C  4EF8 0040                 17      jmp     START
+00000050  FFFF FFFF                 22      SIMHALT
+00000054                            26      END    START        ; last line of source
+
+data LEDS
+0011
+h--l
+00AA
+FF00
+0000
+0040
+303C
+AAAA
+33C0
+0010
+0000
+4640
+4EF8
+0040
