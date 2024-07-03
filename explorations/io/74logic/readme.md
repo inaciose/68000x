@@ -40,4 +40,25 @@ LED5 - q6
 d5 - d6  
 d4 - d5  
 LED4 - q5  
-GND  
+Y0 - CLK  
+
+
+# test code
+<code>
+    ORG     $0000
+    DC.L    $00aaff00
+    DC.L    start       
+    ORG     $0040
+START:
+    move.w  #$aaf0, d0
+    move.w  d0, $100000
+    not.w   d0
+    move.w  d0, $100002
+    move.w  $100000, d1
+    move.w  $100002, d2
+    
+    move.b  d1, $800000
+    move.b  d2, $800000
+    
+    jmp     START
+</code>
