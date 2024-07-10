@@ -1,4 +1,4 @@
-# 68000 interfacing with 68681
+# interfacing 68000 with 68681
 
 Circuito 1 - Ligações simples, sem interrupts  
   
