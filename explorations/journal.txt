@@ -15,3 +15,10 @@
 - Avaliação des circuitos de memória ROM, RAM e descodificadores modulares
 - ROM only circuit1, teste1 falhado: https://github.com/inaciose/68000x/tree/6f156dd65d29b6ec7fafb11f50479ea865d0484a/explorations/memory/rom_circuit1
 - Execução da placa de expansão com ROM: https://github.com/inaciose/68000x/tree/6f156dd65d29b6ec7fafb11f50479ea865d0484a/explorations/boards/bus_rom_board
+- Teste da ROM c/ descodficador na bb bem sucedido
+- Teste da RAM na bb c/ descodficador na bb bem sucedido
+- Testes das acia/uart MC68b50 e MC68681 mal sucedidos
+
+# 2024 - Julho
+- Consegui que a duart MC68681 transmitisse na TxSerial mas não consegui fazer com que lê-se da RxSerial
+- Teste na bb de uma periférico de output de um byte em leds bem sucedido
