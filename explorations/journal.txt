@@ -22,3 +22,6 @@
 # 2024 - Julho
 - Consegui que a duart MC68681 transmitisse na TxSerial mas não consegui fazer com que lê-se da RxSerial
 - Teste na bb de uma periférico de output de um byte em leds bem sucedido
+- Consegui colocar o serial io a funcionar com o MC68681
+- alterei com sucesso o programa monitor no seguinte link para funcionar com MC68681
+
