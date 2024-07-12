@@ -1,7 +1,9 @@
 # interfacing 68000 with 68681
 
-Circuito 1 - Ligações simples, sem interrupts  
-  
+Circuit 1 - Simple, one uart, no interrupts  
+
+MC68681  
+
 A1 - RS1 (1)  
 nc - IP3  
 A2 - RS2  
@@ -49,13 +51,28 @@ nc - IRQ_ (21)
 
 notas: 
 pu = pullup
-SCS (74LS138) saida Y0, com:  
-A20 - A
-A21 - B
-A22 - C
-G2B_ - LDS_
-G2A_ - AS_
-G1 - A23
+SCS (74LS138) saida Y0  
+
+74LS128  
+
+A20 - A (1)  
+A21 - B  
+A22 - C  
+G2B_ - LDS_  
+G2A_ - AS_ (5)  
+G1 - A23  
+nc - Y7  
+GND - GND (8)  
+
+VCC - VCC  (16)  
+SCS - Y0  (15)  
+nc - Y1  
+nc - Y2  
+nc - Y3  
+nc - Y4  
+nc - Y5  
+nc - Y6  (9)  
+
 
 
 
