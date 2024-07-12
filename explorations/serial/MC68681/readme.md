@@ -36,7 +36,7 @@ nc - IP5
 pu - IACK_  
 nc - IP2  
 SCS - CS_ (35)  
-RESET_ - RESET
+RESET_ - RESET  
 GND - X2  
 SCLK - X1  
 RX - RxDA  
