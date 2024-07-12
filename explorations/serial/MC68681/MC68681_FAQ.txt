@@ -326,3 +326,5 @@ whenever the processor loads a character into the appropriate
 transmitter holding register, and the counter/timer ready bit
 (ISR_3) by a stop counter command in both the counter and
 timer modes.
+
+source: https://bigbookofamigahardware.com/bboah/product.aspx?id=604
