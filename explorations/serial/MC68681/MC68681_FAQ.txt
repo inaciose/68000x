@@ -1,0 +1,328 @@
+MC68681/2681 Frequently Asked Questions
+---------------------------------------
+
+-Question: 
+On the MC2681 or MC68681, assuming that the write cycle is
+chip-select controlled, what is the minimum data hold time after
+chip select is negated on a write cycle? 
+
+Answer: 
+The answer is derived from a combination of two specifications.
+The first specification defines that there must be a setup time
+of the W signal relative to CS (Tch). The second specification
+defines the data hold time relative to W going high (Tdh).
+Since Tch = 0, and Tdh = 10 ns, adding them yields 10 ns for a
+data hold time relative to the CS.
+
+
+-Question: 
+The specification for the MC2681/MC68681 specifies a crystal series
+resistance less than 180 ohms. Does that still hold? Can a crystal
+of series resistance of 200 ohms suffice? 
+
+Answer: 
+The specification that defines that a crystal must have a series
+resistance of 180 ohms still applies. It is recommended that any
+crystal with a larger series resistance not be used. Below is a
+list of manufacturers of crystal manufacturers that meet our
+specifications 
+Saronix, Palo Alto, CA (800) 227-8974
+inside Ca. (800) 422-3355, part #NMP037 
+
+Bomar Crystal, Middlesex, NJ (201) 356-7787 
+
+Crystek Corporation, Fort Myers, FL (813) 936-2109 
+
+Electro-Dynamics Corp., Shawnee Mission, KS (913) 262-2500 
+
+Allied Electronics, Fort Worth, TX (214) 265-9341 part # 994-0345 
+
+US Crystals, Fort Worth, TX (800) 433-7140
+
+
+-Question: 
+What value of shunt resistors must be used with the MC2681/MC68681? 
+
+Answer: 
+The MC2681/MC68681 manual is incorrect. A shunt resistor must be
+added across the X1/CLK and X2 pins. This shunt resistor is needed
+to help provide a 50% duty cycle. The recommended value of a shunt
+resistor is 10-20 Mohm. 
+
+
+-Question: 
+Which MC68681 signals require a pull-up resistor? 
+
+Answer: 
+The following signals of the MC68681 require pull-up resistors:
+DTACK, IRQ. The OP7, OP6, OP5, OP4, OP3 signals may require pull-up
+resistors if they are used as open-drain, active-low outputs.
+
+
+-Question: 
+What happens when I read a reserved register on the MC68681/MC2681? 
+
+Answer: 
+When a read of a reserved register (locations $02 or $0A) is
+attempted, the DUART is forced into a diagnostic mode. This mode
+is used to test the baud rate generator circuitry. When the DUART
+enters this mode, it outputs baud frequencies on the general purpose
+output lines which are multiples of the frequencies listed in the
+baud rate table. If the transmitter is enabled, the DUART may also
+transmit at these frequencies, regardless of the value selected in
+the clock select register (CSR). A read to the reserved registers
+may occur accidentally by a monitor program that performs a
+read/verify cycle after write cycles, by negating the write strobe
+prior to the chip select signal at the end of a write bus cycle,
+or possibly by asserting the write strobe after asserting CS* at
+the beginning of a write bus cycle. To avoid the last two
+situations, the chip select signal to the DUART should be qualified
+with DS* from the processor.
+
+
+-Question: 
+Describe the receiver FIFO of the MC68681/MC2681. 
+
+Answer: 
+The DUART has a three-byte receiver FIFO that acts more like a
+circular queue. It has both a head pointer and a tail pointer.
+The head pointer is controlled by a read operation and is
+incremented to the next buffer location whenever a read of the
+receiver occurs. The tail pointer is incremented whenever a new
+character that has been assembled in the shift register is
+transferred to the receive holding register. After an external
+reset or the issuance of a reset receiver command, the head and
+tail pointers point to the same location in the FIFO. The contents
+of the FIFO are not flushed when a reset receiver command is issued.
+It takes three consecutive reads of the FIFO to move the head
+pointer in a circle until it gets back to its original location.
+Note that the head pointer can inadvertently be incremented if a
+monitor program that performs a read/verify cycle after a write
+cycle is in use. 
+
+The receiver ready bit (RxRDY) in either the interrupt status
+register (ISR) or the status register (SRx) should be polled before
+reading the receiver. If the bit is set, the receiver should be read.
+The status register should again be read to determine the state of
+the RxRDY bit. If it is set again, the receiver should be read again.
+This should continue until the RxRDY bit is clear. If a read of the
+receiver is performed when the RxRDY bit is clear, the pointers will
+be incremented beyond the current valid data. 
+
+
+-Question: 
+How can I detect the end of break"? 
+
+Answer: 
+In order to detect a break condition, the DUART receiver
+continuously samples the receive data input (RxD). When it
+senses a low for the start bit and the number of programmed
+bit times, it loads a zero character into the receive FIFO.
+If no stop bit is detected, the receiver samples beyond the
+character frame for one more bit time. If this bit is low, a
+framing error has occurred. Having the framing error bit in
+the status register set and a zero character in the receive
+FIFO forces the received break bit to be set in the ISR and
+the SRx. 
+
+The delta break bits in the ISR must be monitored on order to
+detect an end of break. The processor should not read the zero
+character in the receive FIFO nor clear the receive break bit
+in the SRx until the break is completely over. Once a break
+has been detected, the processor should issue a reset break
+change interrupt command, which resets the delta break bit in
+the ISR. The delta break bit will be set again whenever RxD
+transitions, indicating that the break condition is over. When
+this happens, the processor should issue a break change 
+nterrupt command, a reset error status command, and then read
+and discard the zero character in the receive FIFO.
+
+
+-Question: 
+What are the consequences of changing the DUART configuration
+without first disabling the receiver and transmitter? 
+
+Answer: 
+Whenever you decide to write to the mode registers (MR1x and
+MR2x), the clock select registers (CSRx), or the auxiliary
+control register (ACR), the receiver and transmitter must
+first be disabled. If the mode registers change while
+serialization is still active, the transmission may be
+restarted under the new configuration. If serialization
+is complete and the transmit buffer is empty when the mode
+registers change, one of two things can happen; either TxD
+can go into the space condition for a short period of time
+or the transmitter ready bit (TxRDY) in the ISR may set and
+then reset. The above events are independent of the values
+written to the mode registers. In fact, rewriting the current
+values to the mode registers can produce the same results. 
+
+A more serious consequence may occur if you write to the CSRx
+or bit 7 of the ACR while the transmitter and receiver clocks
+are running. If the clocks are changed without first disabling
+the receiver and transmitter, clipped (shortened) clock pulses
+may appear during the change from one frequency to the next.
+These pulses may cause the receiver and transmitter to lock up. 
+
+The recommended (and best) way to disable the transmitter and
+receiver whenever you plan to change the configuration is to
+issue a software reset command ($20 and $30 to the CRx). Not
+only does this disable the receiver and transmitter, it also
+places the DUART in a known state.
+
+
+-Question: 
+What programming sequence is necessary to operate in the
+Multidrop/Wake-up mode? 
+
+Answer: 
+When the DUART is operating in the Multidrop mode, the
+transmitter sends data with the last bit of each character
+flagged as either address or data. Mode register 1, bit 2,
+determines whether the character being sent is an address or
+a data character. Thus, if you want to send an address
+character followed immediately by data characters, you
+must write to the mode register. Writing to the mode
+register without first resetting the receiver and
+transmitter could result in the incorrect transmission
+of data. Therefore, the following programming sequence
+should be observed when operating in the Multidrop/Wake-up mode: 
+
+  1. Verify that the TxEMT bit is set to guarantee that
+     the transmitter is not currently sending a character. 
+  2. Reset the MR pointers, the receiver and the transmitter
+     via the command register. 
+  3. Load MR1 with the previously written data, insuring
+     that MR1[2] = 1. Then, enable the receiver and transmitter. 
+  4. Load the address character into the transmitter holding
+     register (THR). 
+  5. Wait until the TxEMT bit is set (character sent). 
+  6. Reset the MR pointers, the receiver and the transmitter
+     via the Command Register. 
+  7. Load MR1 with the previous data, this time insuring that
+     MR1[2] = 0. Then, enable the receiver and transmitter. 
+  8. Load the data characters into the THR, until the message
+     is complete. To send data to a different address, repeat
+     steps 1-8. 
+
+Whenever a DUART in a secondary station recognizes an address
+character, it will set its RxRDY bit. The CPU must then
+immediately read the receiver to see if the accumulated
+address matches the station's address. If it does, the CPU
+must set RxEN in either CRA or CRB so that the message can
+be received. At higher baud rate frequencies, it might be
+difficult to perform the compare and the setting of the RxEN
+bit before the data begins to arrive. To alleviate this
+problem, you could enable the RxEN bit as soon as you receive
+the address character and then either reset the receiver if a
+match has not occurred or read the data characters from the
+receive FIFO if the address matches.
+
+
+-Question: 
+What are my options for driving the X1/CLK and X3 pins? 
+
+Answer: 
+The DUART is very sensitive to its clock. The clock circuitry
+can be driven by either a crystal or a TTL-level signal. When
+using a TTL-level clock, the clock signal should be connected
+to X1/CLK and X2 should be grounded. If you do use a TTL-level
+clock to drive X1/CLK, you must guarantee a minimum high
+voltage of 4 Volts and a minimum high and low clock pulse
+width of 100 ns. The X1/CLK driver does not have to be an
+open collector. 
+
+The areas of most concern when using a crystal to drive the
+clock circuitry are the capacitance of C1 and C2, the duty cycle,
+and the rise and fall times of the clock signal. Signetics
+recommends that the values of both capacitors be around 5 pF
+to insure proper charging during the power-on cycle. Our data
+sheet says that C1 should be between 10 and 15 pF and C2 should
+be between 0 and 5 pF. There are no known problems using these
+values. 
+
+Ideally, the duty cycle of the clock signal should be as close
+to 50% as possible. However, many DUARTs show a 60-40 duty
+cycle when hooked up to the crystal. To force a 50-50 duty
+cycle, add a 100 Kohm or greater resistor across X1/CLK and X2. 
+
+The rise and fall time problem may never occur assuming you
+have a good crystal to start with. Below is a list of vendors
+for 3.6864 MHz crystals that meet our specs. There are
+probably many more vendors; these are just the ones we know of. 
+
+Saronix, Palo Alto, CA (800) 227-8974
+inside Ca. (800) 422-3355, part #NMP037 
+
+Bomar Crystal, Middlesex, NJ (201) 356-7787 
+
+Crystek Corporation, Fort Myers, FL (813) 936-2109 
+
+Electro-Dynamics Corp., Shawnee Mission, KS (913) 262-2500 
+
+Allied Electronics, Fort Worth, TX (214) 265-9341 part # 994-0345 
+
+US Crystals, Fort Worth, TX (800) 433-7140 
+
+Multiple DUARTs can be driven from the same crystal.
+Tap off the clock from X1/CLK, buffer it through an inverter,
+add a 1K pull-up resistor, and connect it to the other X1/CLK
+inputs (remember to ground X2 on these devices).
+
+
+-Question: 
+What is the potential problem with receiver-controller
+RTS* negation? 
+
+Answer: 
+When the receiver controls the negation of the RTS* output,
+a one should be written to the appropriate output port pin
+immediately after enabling the receiver. The receiver will
+negate RTS* whenever the FIFO is full and the start bit of
+a fourth character has been detected. Because of this, care
+must be taken in choosing the transmitter at the other end.
+Some transmitters, depending on the manufacturer, will stop
+transmission after sending out the character in the shift
+register while others stop after sending out the characters
+in both the holding register and the shift register. The
+latter transmitters will cause an overrun to occur in the
+DUART receiver.
+
+
+-Question: 
+How long must the pulse be on the input port pins before it
+is recognized internally? 
+
+Answer: 
+The state change detection circuitry requires two successive
+samples of the new state before the delta change bits are set
+in the input port change register (IPCR). This circuitry uses
+a 38.4 KHz sampling clock (generated from the baud rate
+generator). If the crystal frequency is 3.6864 MHz, then the
+sampling period of the internal state machine will be 25
+microseconds. If the transition of the input pin occurs at
+the same time as the first sample pulse, then the new level
+must be present for 25 microseconds. If the level change
+occurs just after the sampling edge, the new level must be
+present for at least 50 microseconds to guarantee recognition.
+
+
+-Question: 
+Does an interrupt acknowledge cycle clear the bits in the
+interrupt status register (ISR) or do I have to clear them
+in software? 
+
+Answer: 
+None of the bits in the ISR are cleared by an interrupt
+acknowledge cycle. The input port change status bit (ISR_7)
+is cleared when the processor reads the input port change
+register (IPCR), the channel A and channel B change in break
+bits (ISR_2 and _6) when the CPU issues a reset break change
+interrupt command for the corresponding channel, the channel
+A and B receiver ready or FIFO full bits (ISR_1 and _5) when
+the CPU reads the receiver buffer for the associated channel,
+the channel A and B transmitter ready bits (ISR_0 and _4)
+whenever the processor loads a character into the appropriate
+transmitter holding register, and the counter/timer ready bit
+(ISR_3) by a stop counter command in both the counter and
+timer modes.
