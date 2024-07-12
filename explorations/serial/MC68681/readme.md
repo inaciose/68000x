@@ -1,6 +1,8 @@
 # interfacing 68000 with 68681
 
-Circuit 1 - Simple, one uart, no interrupts  
+# Block 1 - Simple, one uart, no interrupts  
+
+Testado e a funcionar com o programa acima (MC68681test.X68)  
 
 MC68681  
 
