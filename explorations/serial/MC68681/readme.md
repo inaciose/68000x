@@ -67,8 +67,8 @@ nc - Y7
 GND - GND (8)  
 
 VCC - VCC  (16)  
-SCS - Y0  (15)  
-nc - Y1  
+nc - Y0  
+SCS - Y1  (14)  
 nc - Y2  
 nc - Y3  
 nc - Y4  
