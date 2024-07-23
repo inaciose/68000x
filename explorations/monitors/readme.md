@@ -48,4 +48,8 @@ Free ram until stack pointer range
 - 1) https://github.com/ChartreuseK/68k-Monitor (alterado para funcionar com a DUART MC68681 e teste na maquina ok)
 - 2) https://github.com/jefftranter/68000/blob/master/monitor/ (codigo necessita de ser adaptado para o easy68k)
 - 3) https://github.com/kanpapa/mic68k/tree/master/zbug (testado no simulador easy68K)
-- 
+
+# Envio de ficheiros com S records
+No windows utilizar o Teraterm (permite definir um delay por caracter).  
+No linux usar o cutecom (sudo apt install cutecom)(permite definir um delay por caracter).  
+
