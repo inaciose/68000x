@@ -26,5 +26,8 @@
 - alterei com sucesso o programa monitor no seguinte link para funcionar com MC68681
 - alterei o programa monitor para poder enviar ficheiros com programas em S records
 - troquei toda a logica de descodificação da RAM, ROM, modulto de digital output, clock para uart e geração de dtack para uma placa perfurada.
+- alterei o circuito associado ao MC68681 para ficar conforme o disposto no doc AN-0899 (74LS10 + 74LS138 + 74LS148)
+- compilação e execução de programas em c
+
 
 
