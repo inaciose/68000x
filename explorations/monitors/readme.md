@@ -1,11 +1,16 @@
 # Monitor for 68K with MC68681 DUART
-Este programa monitor foi feito com base no trabalho de ChartreuseK (link 1), alterado para funcionar com a DUART MC68681, ao qual acrescentei posteriormente a funcionalidade de enviar ficheiros com s records.  
+Este programa monitor foi feito com base no trabalho de ChartreuseK (link 1), alterado para funcionar com a DUART MC68681, ao qual acrescentei posteriormente, com base no trabalho de kanpapa (link 3), a funcionalidade de enviar ficheiros com s records.  
+
+v1) colocou-se a funcionar o monitor de acordo com o layout de memoria usado: ROM 0x000000 a 0x0FFFFFF, e RAM 0x100000 a 0x1FFFFF.  
+v5) implementação do envio de S records.  
+v6) implementação da jump table dos vectores (1K) para a RAM com base no endereço 0x100000.  
+
 
 # Ligações do MC68681 minimas necessárias para o funcionamento.
 Esquema Schematic_68KMC68681_basic_2024-07-23.pdf disponivel em:
 https://github.com/inaciose/68000x/tree/main/explorations/serial/MC68681
 
-# Comandos do monitor
+# Comandos do monitor 
 (E)xamine, (D)eposit, (L)load srec, (R)un, (H)elp  
 
 nota: nos argumentos os H são digitos hexadecimais.  
