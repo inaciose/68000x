@@ -13,4 +13,6 @@ Consegui colocar o MC68681 a funcionar no modo mais simples (pooling).
 Adaptei o um programa monitor para a minha máquina.  
 O programa monitor (monitorMC68681t1v1.S68) está disponivel em:  
 https://github.com/inaciose/68000x/tree/main/explorations/monitors  
+A versão 6 do programa monitor permite o envio de programas em srecords  
+Consegui colocar a duart do MC68681 a funcionar com interrupts. O programa foi feito tem C. Ver https://github.com/inaciose/m68k_bare_metal  
   
