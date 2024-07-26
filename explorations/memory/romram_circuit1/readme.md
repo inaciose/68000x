@@ -17,13 +17,13 @@ GND > G2A_
 ROMLOWCE = Y0 + LDS  
 ROMUPCE = Y0 + UDS  
   
-ROMOE AS + not(RW)  
+ROMOE = AS + not(RW)  
 
 RAMLOWCE = Y1 + LDS  
 RAMUPCE = Y1 + UDS  
   
-RAMOE AS + not(RW) 
-RAMWE AS + RW  
+RAMOE = AS + not(RW)  
+RAMWE = AS + RW  
 
 O 68000 é big endian, um long 0A 0B 0C 0D é armazenado da seguinte forma:  
   
