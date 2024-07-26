@@ -1,8 +1,16 @@
 # interfacing 68000 with 68681
 
-# Block 1 - Simple, one uart, no interrupts  
+Primeiro coloquei a funcionar em modo polling (sem interrupts), recorrendo apenas a um decoder 74LS138.  
+- Esquema disponivel em: Schematic_68KMC68681_basic_2024-07-23.pdf (original em texto, abaixo)
+- Programa de teste para gravar nas duas ROMS é o MC68681test.X86  
 
-Testado e a funcionar com o programa acima (MC68681test.X68)  
+Depois alterei o circuito para poder funcionar com interrupts no RX.
+- Esquema disponivel em: Schematic_68KMC68681_interrupts_2024-07-26.pdf (adiciona 1x74LS10 + 1x74LS138 + 1x74LS148)  
+- Programa de teste enviado por srecords (duart_circular_buffer) está disponivel em: https://github.com/inaciose/m68k_bare_metal
+
+
+
+Circuito básico para o MC68681 testado e a funcionar com o programa acima (MC68681test.X68).  
 
 MC68681  
 
