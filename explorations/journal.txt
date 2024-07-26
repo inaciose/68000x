@@ -25,9 +25,10 @@
 - Consegui colocar o serial io a funcionar com o MC68681
 - alterei com sucesso o programa monitor no seguinte link para funcionar com MC68681
 - alterei o programa monitor para poder enviar ficheiros com programas em S records
-- troquei toda a logica de descodificação da RAM, ROM, modulto de digital output, clock para uart e geração de dtack para uma placa perfurada.
+- troquei toda a logica de descodificação da RAM, ROM, modulo de digital output, clock para uart e geração de dtack para uma placa perfurada.
 - alterei o circuito associado ao MC68681 para ficar com interrupts conforme esquema no doc AN-0899 (74LS10 + 74LS138 + 74LS148)
 - compilação e execução de programas em c com base nas instruções e scripts disponiveis: https://github.com/inaciose/m68k_bare_metal
+- consegui colocar a uart a funcionar com interrupts e circular buffer (em c)
 
 
 
