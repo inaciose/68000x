@@ -1,5 +1,7 @@
 # ROM & RAM circuit decoder
 
+Este circuito foi implementado na main_control_board disponivel em: https://github.com/inaciose/68000x/tree/main/explorations/boards  
+
 2x 39SF040, 2x512KB (one for even (low) and one for odd (upper))  
 1x 74LS138  
 2x 74LS32  
